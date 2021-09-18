@@ -1,0 +1,10 @@
+{
+	"server_path" : "authn.sock",
+	"server_name" : "authn.ear7h.net",
+	"client_name" : "test-client.ear7h.net",
+	"alg" : "ES256",
+	"pub_key_file" : "test-pub-key.pem",
+	"priv_key_file" : "test-priv-key.pem",
+	"database" : "authn.sqlite3"
+}
+
