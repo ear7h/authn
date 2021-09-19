@@ -9,9 +9,17 @@ use hyper::Server;
 
 #[tokio::main]
 async fn main() {
-    println!("Hello, world!");
+    println!("starting server");
 
-    let config_file = std::env::var("AUTHN_CONFIG").unwrap_or("config.json".to_string());
+    let args = std::env::args().collect::<Vec<_>>();
+    let config_file = match &args[..] {
+        [_, config] => config,
+        _ => {
+            eprintln!("usage: ./authn config.json");
+            std::process::exit(1);
+        }
+    };
+
     let config_string = std::fs::read_to_string(&config_file).unwrap();
     let config : Config = serde_json::from_str(&config_string).unwrap();
     let (server, path) = authn::server::new_server(config).unwrap();

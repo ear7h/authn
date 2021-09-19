@@ -27,7 +27,7 @@ required-features = [ "server" ]
 tokio = { version = "1", features = ["full"] }
 http-mux = { version = "0.1", features = ["hyper"], optional = true }
 plumb = { version = "0.2", optional = true }
-rusqlite = { version = "0.25", feautres = [ "bundled" ], optional = true }
+rusqlite = { version = "0.25", features = [ "bundled" ], optional = true }
 quick_from = "0.1.0"
 rust-argon2 = { version = "0.8", default-features = false }
 jsonwebtoken = { version = "7.2" }
